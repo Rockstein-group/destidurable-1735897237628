@@ -1,7 +1,7 @@
 ---
 import Seo from "../components/Seo.astro";
 import { Image } from "astro:assets";
-import imgimages_dd_logo_webp from "../../public/images/dd_logo.webp";
+import imgimages_dd_logo_svg from "../../public/images/dd_logo_2.svg";
 import imgimages_dd_leaf_circle_icon_webp from "../../public/images/dd_leaf_circle_icon.webp";
 import imgimages_dd_banner_img_webp from "../../public/images/dd_banner_img.webp";
 import imgimages_dd_leaf_yellow_icon_webp from "../../public/images/dd_leaf_yellow_icon.webp";
@@ -143,7 +143,7 @@ import '../styles/global.css';
               <div aria-label="Logo Container">
                 <a href="/" class="flex items-center space-x-2" aria-label="Go to homepage">
                   <div class="relative" aria-label="Logo image container">
-                    <Image alt="Gaiact Company Logo" src={imgimages_dd_logo_webp} width="115.5" height="60" class="w-[115.5px] h-[60px] object-cover max-w-full " loading="lazy" aria-label="Desti&#x27;Durable Logo" />
+                    <Image alt="Gaiact Company Logo" src={imgimages_dd_logo_svg} width="134.75" height="70" class="w-[134.75px] h-[70px] object-cover max-w-full " loading="lazy" aria-label="Desti&#x27;Durable Logo" />
                   </div>
                 </a>
               </div>
@@ -177,19 +177,28 @@ import '../styles/global.css';
                 <div class="relative flex items-center rounded-3xl border-0 bg-white shadow-lg" aria-label="Feature 1">
                   <div class="flex items-center justify-between w-full p-4">
                     <Image alt="Desti&#x27;Durable" src={imgimages_dd_leaf_yellow_icon_webp} width="24" height="14" class="w-6 h-[14px]" aria-label="Feature 1 icon" />
-                    <p class="font-normal leading-relaxed text-gray-700 w-[calc(100%_-_34px)] " aria-label="Feature 1 description">C’est bien plus qu’un simple éductour :</p>
+                    <div class="w-[calc(100%_-_34px)] text-[17px]">
+                      <h2 class="font-bold leading-relaxed text-gray-700" aria-label="Feature 1 description">Une expérience unique</h2>
+                      <p class="font-normal leading-relaxed text-gray-700" aria-label="Feature 1 description">Bien plus qu’un éductour, c’est une immersion combinant formation et terrain pour accompagner les professionnels du tourisme.</p>
+                    </div>
                   </div>
                 </div>
                 <div class="relative flex items-center rounded-3xl border-0 bg-white shadow-lg" aria-label="Feature 2">
                   <div class="flex items-center justify-between w-full p-4">
                     <Image alt="Desti&#x27;Durable" src={imgimages_dd_leaf_yellow_icon_webp} width="24" height="14" class="w-6 h-[14px]" aria-label="Feature 2 icon" />
-                    <p class="font-normal leading-relaxed text-gray-700 w-[calc(100%_-_34px)] " aria-label="Feature 2 description">C’est une initiative unique alliant formation et immersion sur le terrain pour accompagner les agences de voyage et les structures évènementielles dans leur transition vers un tourisme durable.</p>
+                    <div class="w-[calc(100%_-_34px)] text-[17px]">
+                      <h2 class="font-bold leading-relaxed text-gray-700" aria-label="Feature 1 description">Des solutions concrètes</h2>
+                      <p class="font-normal leading-relaxed text-gray-700" aria-label="Feature 1 description">Un programme ambitieux pour intégrer l’éco-responsabilité dans votre activité et renforcer votre démarche RSE.</p>
+                    </div>
                   </div>
                 </div>
                 <div class="relative flex items-center rounded-3xl border-0 bg-white shadow-lg" aria-label="Feature 3">
                   <div class="flex items-center justify-between w-full p-4">
                     <Image alt="Desti&#x27;Durable" src={imgimages_dd_leaf_yellow_icon_webp} width="24" height="14" class="w-6 h-[14px]" aria-label="Feature 3 icon" />
-                    <p class="font-normal leading-relaxed text-gray-700 w-[calc(100%_-_34px)] " aria-label="Feature 3 description">Ce programme ambitieux propose des solutions concrètes pour intégrer directement les valeurs de l’éco-responsabilité au cœur de votre métier, tout en valorisant les acteurs locaux engagés.</p>
+                    <div class="w-[calc(100%_-_34px)] text-[17px]">
+                      <h2 class="font-bold leading-relaxed text-gray-700" aria-label="Feature 1 description">Sourcing éco-responsable</h2>
+                      <p class="font-normal leading-relaxed text-gray-700" aria-label="Feature 1 description">Rencontrez des prestataires locaux engagés pour répondre aux besoins des voyageurs d’aujourd’hui.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -892,7 +901,7 @@ import '../styles/global.css';
             <div class="mx-auto container 2xl:max-w-[1440px]">
               <div class="flex flex-col items-center justify-between gap-6 md:flex-row" aria-label="Footer Content">
                 <div class="flex items-center gap-2" aria-label="Footer Logo">
-                  <Image alt="Desti&#x27;Durable Logo" src={imgimages_dd_logo_webp} width="196" height="100" class="w-auto h-auto" aria-label="Desti&#x27;Durable Logo Image" />
+                  <Image alt="Desti&#x27;Durable Logo" src={imgimages_dd_logo_svg} width="196" height="100" class="w-auto h-auto" aria-label="Desti&#x27;Durable Logo Image" />
                 </div>
                 <form class="flex w-auto lg:w-full max-w-xl gap-4" aria-label="Footer Email Form">
                   <input type="email" placeholder="Adresse e-mail" class="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Email Input Field" />
