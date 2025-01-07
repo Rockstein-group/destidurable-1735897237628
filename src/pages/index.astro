@@ -61,11 +61,11 @@ import '../styles/global.css';
                 }
                 console.log("Test 6")
                 const result = await response.json();
-                showToast('Form submitted successfully!');
+                showToast('Merci, votre demande a été envoyée.');
                 console.log('Form submitted successfully:', result);
               } catch (error) {
                 console.error('Error submitting form:', error);
-                showToast('Error submitting form', 'error');
+                showToast('Erreur lors de la soumission du formulaire', 'error');
               }
             });
           });
