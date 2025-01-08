@@ -5,10 +5,10 @@ import imgimages_dd_logo_svg from "../../public/images/dd_logo_2.svg";
 import imgimages_dd_leaf_circle_icon_webp from "../../public/images/dd_leaf_circle_icon.webp";
 import imgimages_dd_banner_img_webp from "../../public/images/dd_banner_img.webp";
 import imgimages_dd_leaf_yellow_icon_webp from "../../public/images/dd_leaf_yellow_icon.webp";
-import imgimages_dd_commit_img_webp from "../../public/images/dd_commit_img.webp";
+import imgimages_dd_commit_img_webp from "../../public/images/dd_commit_img_2.webp";
 import imgimages_dd_global_img_webp from "../../public/images/dd_global_img.webp";
 import imgimages_dd_quote_icon_webp from "../../public/images/dd_quote_icon.webp";
-import imgimages_dd_destination_img_webp from "../../public/images/dd_destination_img.webp";
+import imgimages_dd_destination_img_webp from "../../public/images/dd_destination_img_2.webp";
 import imgimages_dd_key_shield_icon_webp from "../../public/images/dd_key_shield_icon.webp";
 import imgimages_dd_key_globe_icon_webp from "../../public/images/dd_key_globe_icon.webp";
 import imgimages_dd_key_book_icon_webp from "../../public/images/dd_key_book_icon.webp";
@@ -79,11 +79,11 @@ import '../styles/global.css';
       const handleScrollByWheel = (event) => {
         if (event.deltaY !== 0) {
           isUserScrolling = true;
-          // dynamicContent.style.display = 'block';
+          dynamicContent.style.display = 'block';
           console.log('Scrolling triggered by user');
         } else {
           isUserScrolling = false;
-          // dynamicContent.style.display = 'none';
+          dynamicContent.style.display = 'none';
           console.log('Scrolling triggered by code');
         }
       };
@@ -92,7 +92,7 @@ import '../styles/global.css';
         const width = window.innerWidth;
         if (width <= 992) {
           isUserScrolling = true;
-          // dynamicContent.style.display = 'block';
+          dynamicContent.style.display = 'block';
         }
       };
 
@@ -101,7 +101,7 @@ import '../styles/global.css';
 
         if (e.offsetX > target.clientWidth || e.offsetY > target.clientHeight) {
           isUserScrolling = true;
-          // dynamicContent.style.display = 'block';
+          dynamicContent.style.display = 'block';
         }
       };
 
@@ -117,6 +117,11 @@ import '../styles/global.css';
       });
     });
   </script>
+<script>
+  window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+  });
+</script>
         <Seo seo={{ title: "Boostez vos ventes avec l’expertise voyage éthique", description: "Une initiative unique combinant formation et immersion pour aider agences de voyage et événements à adopter un tourisme durable et valoriser les acteurs locaux.", keywords: "voyage durable,voyage écologique europe,formation touristique durable", canonical: "https://destidurable.com/", image: 'https://destidurable.com/images/1735896410105_desti_durable_logo.png', type: "Website", themeColor: "#ffffff"}} />
 		<meta charset="utf-8" />
     <link
@@ -248,7 +253,7 @@ import '../styles/global.css';
               </div>
             </div>
           </div>
-          <section class="main-component flex flex-col overflow-hidden rounded-lg bg-[#F6F8F6]" aria-label="Desti Durable Mission Section" id="dynamic-content">
+          <section class="main-component flex flex-col overflow-hidden rounded-lg bg-[#F6F8F6]" aria-label="Desti Durable Mission Section" id="dynamic-content" style="display: none;">
             <div class="max-md:max-w-full px-2 py-16">
               <div class="flex items-center justify-center flex-wrap lg:flex-nowrap w-full p-4 mx-auto container 2xl:max-w-[1440px] relative" aria-label="Wrapper for Mission Section">
                 <div class="relative w-full lg:max-w-[390px] rounded-xl bg-[#F6F8F6] p-6 shadow-lg border border-[#A1B6A5] z-10" aria-label="Values Box">
