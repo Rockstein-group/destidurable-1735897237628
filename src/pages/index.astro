@@ -74,289 +74,326 @@ import '../styles/global.css';
       </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      let isUserScrolling = false;
-      let contentLoaded = false;
-      const dynamicContent = document.getElementById('dynamic-content');
-      const faqContent = document.getElementById('faq-content');
-      const loadContent = () => {
-    if (!contentLoaded) {
-      faqContent.innerHTML = `<div class="max-md:max-w-full px-2 py-16">
-                                <div class="w-full p-4 mx-auto container lg:max-w-[1160px] relative">
-                                  <h2 class="mb-12 font-semibold text-2xl md:text-3xl text-[#252525] text-center">Frequently Asked Questions</h2>
-                                  <div class="desti-durable-faq space-y-4">
-                                    <div class="overflow-hidden rounded-lg bg-white shadow-sm">
-                                      <details class="group">
-                                        <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
-                                          <div class="flex items-center space-x-6 w-full">
-                                            <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">01</h3>
-                                            <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">Qu&#x27;est-ce que Desti&#x27;Durable ?</h4>
-                                            <div class="group-open:hidden !ml-auto flex-shrink-0">
-                                             <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
-                                            <div class="hidden group-open:block !ml-auto flex-shrink-0">
-                                              <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
+        let isUserScrolling = false;
+        let contentLoaded = false;
+        const dynamicContent = document.getElementById('dynamic-content');
+        const faqContent = document.getElementById('faq-content');
+        const loadContent = () => {
+            if (!contentLoaded) {
+                faqContent.innerHTML = `<div class="max-md:max-w-full px-2 py-16">
+                              <div class="w-full p-4 mx-auto container lg:max-w-[1160px] relative">
+                                <h2 class="mb-12 font-semibold text-2xl md:text-3xl text-[#252525] text-center">Frequently Asked Questions</h2>
+                                <div class="desti-durable-faq space-y-4">
+                                  <div class="overflow-hidden rounded-lg bg-white shadow-sm">
+                                    <details class="group">
+                                      <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
+                                        <div class="flex items-center space-x-6 w-full">
+                                          <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">01</h3>
+                                          <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">Qu&#x27;est-ce que Desti&#x27;Durable ?</h4>
+                                          <div class="group-open:hidden !ml-auto flex-shrink-0">
+                                           <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
                                           </div>
-                                        </summary>
-                                        <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
-                                          <div>
-                                            <div class="text-gray-600">
-                                              <p>Desti&#x27;Durable est un éductour-formation innovant destiné aux agences de voyage et MICE. Son objectif est de monter en expertise sur la vente et la communication des séjours éco-responsables et de promouvoir des pratiques durables dans le tourisme.</p>
-                                            </div>
+                                          <div class="hidden group-open:block !ml-auto flex-shrink-0">
+                                            <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
                                           </div>
                                         </div>
-                                      </details>
-                                    </div>
-                                    <div class="overflow-hidden rounded-lg bg-white shadow-sm">
-                                      <details class="group">
-                                        <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
-                                          <div class="flex items-center space-x-6 w-full">
-                                            <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">02</h3>
-                                            <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">La formation peut-elle être prise en charge ?</h4>
-                                            <div class="group-open:hidden !ml-auto flex-shrink-0">
-                                             <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
-                                            <div class="hidden group-open:block !ml-auto flex-shrink-0">
-                                              <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
-                                          </div>
-                                        </summary>
-                                        <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
-                                          <div>
-                                            <div class="text-gray-600">
-                                              <p>Oui, avec DGT Formations, organisme certifié Qualiopi, nous facilitons votre demande de prise en charge. Nous vous fournissons la convention, le programme détaillé et tous les documents nécessaires pour votre OPCO, afin d&#x27;assurer une prise en charge complète de votre formation. Vous êtes accompagnés de A à Z dans vos démarches.</p>
-                                            </div>
+                                      </summary>
+                                      <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
+                                        <div>
+                                          <div class="text-gray-600">
+                                            <p>Desti&#x27;Durable est un éductour-formation innovant destiné aux agences de voyage et MICE. Son objectif est de monter en expertise sur la vente et la communication des séjours éco-responsables et de promouvoir des pratiques durables dans le tourisme.</p>
                                           </div>
                                         </div>
-                                      </details>
-                                    </div>
-                                    <div class="overflow-hidden rounded-lg bg-white shadow-sm">
-                                      <details class="group">
-                                        <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
-                                          <div class="flex items-center space-x-6 w-full">
-                                            <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">03</h3>
-                                            <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">Comment se déroule la formation à bord du train ?</h4>
-                                            <div class="group-open:hidden !ml-auto flex-shrink-0">
-                                             <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
-                                            <div class="hidden group-open:block !ml-auto flex-shrink-0">
-                                              <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
+                                      </div>
+                                    </details>
+                                  </div>
+                                  <div class="overflow-hidden rounded-lg bg-white shadow-sm">
+                                    <details class="group">
+                                      <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
+                                        <div class="flex items-center space-x-6 w-full">
+                                          <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">02</h3>
+                                          <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">La formation peut-elle être prise en charge ?</h4>
+                                          <div class="group-open:hidden !ml-auto flex-shrink-0">
+                                           <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
                                           </div>
-                                        </summary>
-                                        <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
-                                          <div>
-                                            <div class="text-gray-600">
-                                              <p>La formation débute directement dans une voiture privatisée, avec les sièges orientés dans le même sens, pour un confort optimal. Cela permet de commencer la formation à bord dans de bonnes conditions, en optimisant le temps de trajet. 🚆</p>
-                                            </div>
+                                          <div class="hidden group-open:block !ml-auto flex-shrink-0">
+                                            <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
                                           </div>
                                         </div>
-                                      </details>
-                                    </div>
-                                    <div class="overflow-hidden rounded-lg bg-white shadow-sm">
-                                      <details class="group">
-                                        <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
-                                          <div class="flex items-center space-x-6 w-full">
-                                            <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">04</h3>
-                                            <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">Comment se déroule le workshop ?</h4>
-                                            <div class="group-open:hidden !ml-auto flex-shrink-0">
-                                             <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
-                                            <div class="hidden group-open:block !ml-auto flex-shrink-0">
-                                              <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
-                                          </div>
-                                        </summary>
-                                        <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
-                                          <div>
-                                            <div class="text-gray-600">
-                                              <p>Quel que soit la destination, une plateforme dédiée sera mise en place en amont de l'éductour. Cette plateforme vous permettra de vous positionner sur des créneaux et de planifier vos rencontres avec les prestataires locaux. Cela facilite le bon déroulement du workshop et maximise les opportunités d'échange sur place. 🤝✨</p>
-                                            </div>
+                                      </summary>
+                                      <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
+                                        <div>
+                                          <div class="text-gray-600">
+                                            <p>Oui, avec DGT Formations, organisme certifié Qualiopi, nous facilitons votre demande de prise en charge. Nous vous fournissons la convention, le programme détaillé et tous les documents nécessaires pour votre OPCO, afin d&#x27;assurer une prise en charge complète de votre formation. Vous êtes accompagnés de A à Z dans vos démarches.</p>
                                           </div>
                                         </div>
-                                      </details>
-                                    </div>
-                                    <div class="overflow-hidden rounded-lg bg-white shadow-sm">
-                                      <details class="group">
-                                        <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
-                                          <div class="flex items-center space-x-6 w-full">
-                                            <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">05</h3>
-                                            <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">D&#x27;autres thématiques de formation sont-elles possibles ?</h4>
-                                            <div class="group-open:hidden !ml-auto flex-shrink-0">
-                                             <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
-                                            <div class="hidden group-open:block !ml-auto flex-shrink-0">
-                                              <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
+                                      </div>
+                                    </details>
+                                  </div>
+                                  <div class="overflow-hidden rounded-lg bg-white shadow-sm">
+                                    <details class="group">
+                                      <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
+                                        <div class="flex items-center space-x-6 w-full">
+                                          <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">03</h3>
+                                          <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">Comment se déroule la formation à bord du train ?</h4>
+                                          <div class="group-open:hidden !ml-auto flex-shrink-0">
+                                           <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
                                           </div>
-                                        </summary>
-                                        <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
-                                          <div>
-                                            <div class="text-gray-600">
-                                              <p>Oui, selon les destinations et les besoins identifiés, d&#x27;autres thématiques pourront être abordées lors des prochains Desti&#x27;Durable. Toutefois, la formation &#x27;Concevoir, Commercialiser et Promouvoir un Produit Touristique Durable&#x27; reste essentielle et sera proposée au moins une fois par an dans le cadre de Desti&#x27;Durable. 🌿📚</p>
-                                            </div>
+                                          <div class="hidden group-open:block !ml-auto flex-shrink-0">
+                                            <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
                                           </div>
                                         </div>
-                                      </details>
-                                    </div>
-                                    <div class="overflow-hidden rounded-lg bg-white shadow-sm">
-                                      <details class="group">
-                                        <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
-                                          <div class="flex items-center space-x-6 w-full">
-                                            <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">06</h3>
-                                            <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">D&#x27;autres Desti&#x27;Durable sont-ils prévus ?</h4>
-                                            <div class="group-open:hidden !ml-auto flex-shrink-0">
-                                             <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
-                                            <div class="hidden group-open:block !ml-auto flex-shrink-0">
-                                              <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
-                                          </div>
-                                        </summary>
-                                        <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
-                                          <div>
-                                            <div class="text-gray-600">
-                                              <p>Oui, un autre éductour est prévu pour la fin de l'année. À terme, 3 Desti&#x27;Durable seront programmés chaque année avec des destinations variées : la France, l'Europe et des options long-courriers pour répondre aux besoins des professionnels du tourisme. 🌍</p>
-                                            </div>
+                                      </summary>
+                                      <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
+                                        <div>
+                                          <div class="text-gray-600">
+                                            <p>La formation débute directement dans une voiture privatisée, avec les sièges orientés dans le même sens, pour un confort optimal. Cela permet de commencer la formation à bord dans de bonnes conditions, en optimisant le temps de trajet. 🚆</p>
                                           </div>
                                         </div>
-                                      </details>
-                                    </div>
-                                    <div class="overflow-hidden rounded-lg bg-white shadow-sm">
-                                      <details class="group">
-                                        <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
-                                          <div class="flex items-center space-x-6 w-full">
-                                            <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">07</h3>
-                                            <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">Quels bénéfices pour les participants ?</h4>
-                                            <div class="group-open:hidden !ml-auto flex-shrink-0">
-                                             <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
-                                            <div class="hidden group-open:block !ml-auto flex-shrink-0">
-                                              <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                </svg>
-                                              </span>
-                                            </div>
+                                      </div>
+                                    </details>
+                                  </div>
+                                  <div class="overflow-hidden rounded-lg bg-white shadow-sm">
+                                    <details class="group">
+                                      <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
+                                        <div class="flex items-center space-x-6 w-full">
+                                          <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">04</h3>
+                                          <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">Comment se déroule le workshop ?</h4>
+                                          <div class="group-open:hidden !ml-auto flex-shrink-0">
+                                           <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
                                           </div>
-                                        </summary>
-                                        <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
-                                          <div>
-                                            <div class="text-gray-600">
-                                              <p></p>
-                                              <p> - Une meilleure compréhension des enjeux du tourisme durable.</p>
-                                              <p> - Des outils concrets pour développer des offres éco-responsables et convaincre les clients.</p>
-                                              <p> - Une expérience immersive alliant théorie, terrain et échanges professionnels.</p>
-                                              <p></p>
-                                            </div>
+                                          <div class="hidden group-open:block !ml-auto flex-shrink-0">
+                                            <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
                                           </div>
                                         </div>
-                                      </details>
-                                    </div>
+                                      </summary>
+                                      <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
+                                        <div>
+                                          <div class="text-gray-600">
+                                            <p>Quel que soit la destination, une plateforme dédiée sera mise en place en amont de l'éductour. Cette plateforme vous permettra de vous positionner sur des créneaux et de planifier vos rencontres avec les prestataires locaux. Cela facilite le bon déroulement du workshop et maximise les opportunités d'échange sur place. 🤝✨</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </details>
+                                  </div>
+                                  <div class="overflow-hidden rounded-lg bg-white shadow-sm">
+                                    <details class="group">
+                                      <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
+                                        <div class="flex items-center space-x-6 w-full">
+                                          <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">05</h3>
+                                          <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">D&#x27;autres thématiques de formation sont-elles possibles ?</h4>
+                                          <div class="group-open:hidden !ml-auto flex-shrink-0">
+                                           <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
+                                          </div>
+                                          <div class="hidden group-open:block !ml-auto flex-shrink-0">
+                                            <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </summary>
+                                      <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
+                                        <div>
+                                          <div class="text-gray-600">
+                                            <p>Oui, selon les destinations et les besoins identifiés, d&#x27;autres thématiques pourront être abordées lors des prochains Desti&#x27;Durable. Toutefois, la formation &#x27;Concevoir, Commercialiser et Promouvoir un Produit Touristique Durable&#x27; reste essentielle et sera proposée au moins une fois par an dans le cadre de Desti&#x27;Durable. 🌿📚</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </details>
+                                  </div>
+                                  <div class="overflow-hidden rounded-lg bg-white shadow-sm">
+                                    <details class="group">
+                                      <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
+                                        <div class="flex items-center space-x-6 w-full">
+                                          <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">06</h3>
+                                          <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">D&#x27;autres Desti&#x27;Durable sont-ils prévus ?</h4>
+                                          <div class="group-open:hidden !ml-auto flex-shrink-0">
+                                           <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
+                                          </div>
+                                          <div class="hidden group-open:block !ml-auto flex-shrink-0">
+                                            <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </summary>
+                                      <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
+                                        <div>
+                                          <div class="text-gray-600">
+                                            <p>Oui, un autre éductour est prévu pour la fin de l'année. À terme, 3 Desti&#x27;Durable seront programmés chaque année avec des destinations variées : la France, l'Europe et des options long-courriers pour répondre aux besoins des professionnels du tourisme. 🌍</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </details>
+                                  </div>
+                                  <div class="overflow-hidden rounded-lg bg-white shadow-sm">
+                                    <details class="group">
+                                      <summary class="flex w-full items-center justify-between p-6 text-left focus:outline-none cursor-pointer group-open:bg-[#E2E8E3]">
+                                        <div class="flex items-center space-x-6 w-full">
+                                          <h3 class="text-lg md:text-4xl font-bold text-[#00A5E9]">07</h3>
+                                          <h4 class="text-base md:text-xl font-medium text-[#252525] mr-2 lg:mr-0">Quels bénéfices pour les participants ?</h4>
+                                          <div class="group-open:hidden !ml-auto flex-shrink-0">
+                                           <span class="w-8 h-8 lg:w-12 lg:h-12 bg-white flex items-center justify-center rounded-full">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
+                                          </div>
+                                          <div class="hidden group-open:block !ml-auto flex-shrink-0">
+                                            <span class="w-8 h-8 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center rounded-full rotate-45">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </summary>
+                                      <div class="px-6 pb-6 group-open:bg-[#E2E8E3]">
+                                        <div>
+                                          <div class="text-gray-600">
+                                            <p></p>
+                                            <p> - Une meilleure compréhension des enjeux du tourisme durable.</p>
+                                            <p> - Des outils concrets pour développer des offres éco-responsables et convaincre les clients.</p>
+                                            <p> - Une expérience immersive alliant théorie, terrain et échanges professionnels.</p>
+                                            <p></p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </details>
                                   </div>
                                 </div>
                               </div>
-      `;
-      contentLoaded = true;
-    }
-  };
+                            </div>
+    `;
+                contentLoaded = true;
+                const faqItems = document.querySelectorAll('.desti-durable-faq details');
 
-      const handleScrollByWheel = (event) => {
-        if (event.deltaY !== 0) {
-          isUserScrolling = true;
-          dynamicContent.style.display = 'block';
-          loadContent();
-          console.log('Scrolling triggered by user');
-        } else {
-          isUserScrolling = false;
-          dynamicContent.style.display = 'none';
-          console.log('Scrolling triggered by code');
-        }
-      };
+                // Add tabindex to each question for keyboard focus
+                faqItems.forEach((item, index) => {
+                    item.setAttribute('tabindex', '0');
+                    item.addEventListener('keydown', (event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            item.open = !item.open;
+                        }
+                    });
+                });
 
-      const handleCheckScrollMobile = () => {
-        const width = window.innerWidth;
-        if (width <= 1024) {
-          isUserScrolling = true;
-          dynamicContent.style.display = 'block';
-          loadContent();
-        }
-      };
+                // Allow keyboard navigation with arrow keys
+                document.addEventListener('keydown', (event) => {
+                    const focusedElement = document.activeElement;
+                    if (!focusedElement || !focusedElement.closest('.desti-durable-faq')) return;
 
-      const handleScrollbarClick = (e) => {
-        const target = e.target;
+                    const currentIndex = Array.from(faqItems).indexOf(focusedElement);
+                    if (event.key === 'ArrowDown') {
+                        event.preventDefault();
+                        const nextItem = faqItems[currentIndex + 1] || faqItems[0];
+                        nextItem.focus();
+                    } else if (event.key === 'ArrowUp') {
+                        event.preventDefault();
+                        const prevItem = faqItems[currentIndex - 1] || faqItems[faqItems.length - 1];
+                        prevItem.focus();
+                    }
+                });
+            }
+        };
 
-        if (e.offsetX > target.clientWidth || e.offsetY > target.clientHeight) {
-          isUserScrolling = true;
-          dynamicContent.style.display = 'block';
-          loadContent();
-        }
-      };
+        const handleScrollByWheel = (event) => {
+            if (event.deltaY !== 0) {
+                isUserScrolling = true;
+                dynamicContent.style.display = 'block';
+                loadContent();
+                console.log('Scrolling triggered by user');
+            } else {
+                isUserScrolling = false;
+                dynamicContent.style.display = 'none';
+                console.log('Scrolling triggered by code');
+            }
+        };
 
-      window.addEventListener('wheel', handleScrollByWheel);
-      window.addEventListener('scroll', handleCheckScrollMobile);
-      window.addEventListener('mousedown', handleScrollbarClick);
+        const handleCheckScrollMobile = () => {
+            const width = window.innerWidth;
+            if (width <= 1024) {
+                isUserScrolling = true;
+                dynamicContent.style.display = 'block';
+                loadContent();
+            }
+        };
 
-      // Clean up event listeners when the page is unloaded
-      window.addEventListener('beforeunload', () => {
-        window.removeEventListener('wheel', handleScrollByWheel);
-        window.removeEventListener('scroll', handleCheckScrollMobile);
-        window.removeEventListener('mousedown', handleScrollbarClick);
-      });
-    });
-  </script>
+        const handleScrollbarClick = (e) => {
+            const target = e.target;
+
+            if (e.offsetX > target.clientWidth || e.offsetY > target.clientHeight) {
+                isUserScrolling = true;
+                dynamicContent.style.display = 'block';
+                loadContent();
+            }
+        };
+
+         // Trigger actions when Tab or Arrow keys are pressed
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Tab' || event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+                dynamicContent.style.display = 'block';
+                loadContent();
+            }
+        });
+
+        window.addEventListener('wheel', handleScrollByWheel);
+        window.addEventListener('scroll', handleCheckScrollMobile);
+        window.addEventListener('mousedown', handleScrollbarClick);
+
+        // Clean up event listeners when the page is unloaded
+        window.addEventListener('beforeunload', () => {
+            window.removeEventListener('wheel', handleScrollByWheel);
+            window.removeEventListener('scroll', handleCheckScrollMobile);
+            window.removeEventListener('mousedown', handleScrollbarClick);
+        });
+    }); 
+</script>
 <script>
   window.addEventListener('beforeunload', () => {
     window.scrollTo(0, 0);
