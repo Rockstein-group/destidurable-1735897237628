@@ -74,6 +74,8 @@ import '../styles/global.css';
     document.addEventListener('DOMContentLoaded', () => {
         let isUserScrolling = false;
         let contentLoaded = false;
+        let skipScrollToTop = false;
+        const scrollToTopLinks = document.querySelectorAll('.test-abc');
         const dynamicContent = document.getElementById('dynamic-content');
         const faqContent = document.getElementById('faq-content');
         const loadContent = () => {
@@ -372,6 +374,18 @@ import '../styles/global.css';
             // }
         });
 
+        scrollToTopLinks.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                skipScrollToTop = true; // Mark that we don't want to scroll to top
+                event.preventDefault(); // Prevent default link behavior
+                const url = link.getAttribute('href');
+                window.location.href = url; // Navigate to the link's href
+                setTimeout(() => {
+                  skipScrollToTop = false;
+                }, 1500);
+            });
+        });
+
         window.addEventListener('wheel', handleScrollByWheel);
         window.addEventListener('scroll', handleCheckScrollMobile);
         window.addEventListener('mousedown', handleScrollbarClick);
@@ -382,12 +396,13 @@ import '../styles/global.css';
             window.removeEventListener('scroll', handleCheckScrollMobile);
             window.removeEventListener('mousedown', handleScrollbarClick);
         });
+
+        window.addEventListener('beforeunload', () => {
+          if (!skipScrollToTop) {
+                window.scrollTo(0, 0);
+            }
+        });
     }); 
-</script>
-<script>
-  window.addEventListener('beforeunload', () => {
-    window.scrollTo(0, 0);
-  });
 </script>
         <Seo seo={{ title: "Boostez vos ventes avec l'expertise voyage éthique", description: "Une initiative unique combinant formation et immersion pour aider agences de voyage et événements à adopter un tourisme durable et valoriser les acteurs locaux.", keywords: "voyage durable,voyage écologique europe,formation touristique durable", canonical: "https://destidurable.com/", image: 'https://destidurable.com/images/1735896410105_desti_durable_logo.png', type: "Website", themeColor: "#ffffff"}} />
 		<meta charset="utf-8" />
@@ -718,7 +733,7 @@ import '../styles/global.css';
                           <p class="text-lg lg:text-xl text-gray-700 font-medium">Les 3 atouts de Desti&#x27;Durable catalogne</p>
                         </div>
                         <div class="mb-8 flex justify-center">
-                          <a class="flex font-medium items-center gap-2 rounded-full border-2 px-6 py-2 text-lg bg-white border-[#FAB549]" href="https://drive.usercontent.google.com/uc?id=1UoIWH_6V0TdBL6l7WZ9ExdSVQfu7bMgq&amp;export=download">
+                          <a class="flex font-medium items-center gap-2 rounded-full border-2 px-6 py-2 text-lg bg-white border-[#FAB549] test-abc" href="https://drive.usercontent.google.com/u/0/uc?id=1GfHR4lx3MebIRHInJ32VXNziDuF8Sfxk&export=download">
                             <Image alt="Desti&#x27;Durable" src={imgimages_dd_download_icon_webp} width="20" height="20" class="mr-2 flex-shrink-0" />
                             <p class="text-base">Téléchargez le programme complet</p>
                           </a>
@@ -819,7 +834,7 @@ import '../styles/global.css';
                             </div>
                           </div>
                           <div class="mt-12 flex justify-center" aria-label="Footer Button">
-                            <a class="rounded-full inline-flex items-center justify-center bg-[#FFB84C] px-8 min-h-[44px] mx-auto text-[#252525] hover:bg-[#ffa01c] text-center" aria-label="Footer Button" href="https://share-eu1.hsforms.com/1vgHgXrOZS-S0a649gtmiRw2dnpqk" target="_blank">Pré-inscription Desti'Durable Catalogne</a>
+                            <a class="rounded-full inline-flex items-center justify-center bg-[#FFB84C] px-8 min-h-[44px] mx-auto text-[#252525] hover:bg-[#ffa01c] text-center test-abc" aria-label="Footer Button" href="https://drive.usercontent.google.com/u/0/uc?id=1kYqq2z1fltNxE3zioVEjzu4picvXxGnk&export=download">Pré-inscription Desti'Durable Catalogne</a>
                           </div>
                         </div>
                       </div>
