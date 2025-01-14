@@ -366,6 +366,12 @@ import '../styles/global.css';
                 dynamicContent.style.display = 'block';
                 loadContent();
             }
+            if ( event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+                setTimeout(() => {
+                  dynamicContent.style.display = 'block';
+                  loadContent();
+                },2500)
+            }
         });
 
         window.addEventListener('wheel', handleScrollByWheel);
