@@ -24,8 +24,6 @@ import imgimages_dd_partner_logo_2_webp from "../../public/images/dd_partner_log
 import imgimages_dd_partner_logo_3_webp from "../../public/images/dd_partner_logo_3.webp";
 import imgimages_dd_partner_logo_4_webp from "../../public/images/dd_partner_logo_4.webp";
 import imgimages_dd_who_we_are_img_webp from "../../public/images/dd_who_we_are_img.webp";
-import imgimages_dd_faq_plus_icon_webp from "../../public/images/dd_faq_plus_icon.webp";
-import imgimages_dd_faq_close_icon_webp from "../../public/images/dd_faq_close_icon.webp";
 import '../styles/global.css';
 ---
 
@@ -366,12 +364,12 @@ import '../styles/global.css';
                 dynamicContent.style.display = 'block';
                 loadContent();
             }
-            if ( event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-                setTimeout(() => {
-                  dynamicContent.style.display = 'block';
-                  loadContent();
-                },2500)
-            }
+            // if ( event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+            //     setTimeout(() => {
+            //       dynamicContent.style.display = 'block';
+            //       loadContent();
+            //     },2500)
+            // }
         });
 
         window.addEventListener('wheel', handleScrollByWheel);
