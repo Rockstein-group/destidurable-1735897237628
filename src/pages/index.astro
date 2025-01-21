@@ -30,8 +30,109 @@ import '../styles/global.css';
 
 <html lang="en">
 	<head>
-		
-        <script>
+    <script>
+      class LazyLoad extends HTMLElement {
+              constructor() {
+                super()
+                class HeadlessDetect {
+                  allTestFunctions = [
+                    'testUserAgent',
+                    'testChromeWindow',
+                    'testPlugins',
+                    'testAppVersion',
+                    'testConnectionRtt'
+                  ]
+      
+                  constructor() {}
+      
+                  testUserAgent() {
+                    if (/Headless/.test(window.navigator.userAgent)) {
+                      return 1
+                    } else {
+                      return 0
+                    }
+                  }
+      
+                  testChromeWindow() {
+                    // @ts-ignore
+                    if (eval.toString().length == 33 && !window.chrome) {
+                      return 1
+                    } else {
+                      return 0
+                    }
+                  }
+      
+                  testNotificationPermissions(callback) {
+                    navigator.permissions
+                      .query({ name: 'notifications' })
+                      .then(function (permissionStatus) {
+                        if (
+                          Notification.permission === 'denied' &&
+                          permissionStatus.state === 'prompt'
+                        ) {
+                          // Headless
+                          callback(1)
+                        } else {
+                          // Not Headless
+                          callback(0)
+                        }
+                      })
+                  }
+      
+                  testPlugins() {
+                    let length = navigator.plugins.length
+      
+                    return length === 0 ? 1 : 0
+                  }
+      
+                  testAppVersion() {
+                    let appVersion = navigator.appVersion
+      
+                    return /headless/i.test(appVersion) ? 1 : 0
+                  }
+      
+                  // Connection Rtt
+                  testConnectionRtt() {
+                    // @ts-ignore
+                    let connection = navigator.connection
+                    let connectionRtt = connection ? connection.rtt : undefined
+      
+                    if (connectionRtt === undefined) {
+                      return 0
+                    } else {
+                      return connectionRtt === 0 ? 1 : 0
+                    }
+                  }
+      
+                  getHeadlessScore() {
+                    let score = 0
+                    let testsRun = 0
+      
+                    this.testNotificationPermissions(function (v) {
+                      score += v
+                      testsRun++
+                    })
+      
+                    for (let i = 0; i < this.allTestFunctions.length; i++) {
+                      score += this[this.allTestFunctions[i]].apply()
+                      testsRun++
+                    }
+      
+                    return score / testsRun
+                  }
+                }
+                const headlessDetector = new HeadlessDetect()
+                if (headlessDetector.getHeadlessScore() > 0.25) {
+                  while (this.firstChild) {
+                    this.removeChild(this.firstChild)
+                  }
+                }
+              }
+            }
+
+       customElements.define('lazy-load', LazyLoad)
+      </script>
+		 <script>
         import { showToast } from "../components/toast";
         (() => {
           const els = [...document.querySelectorAll('form')];
@@ -494,6 +595,7 @@ import '../styles/global.css';
           </div>
         </div>
  <!-- Dynamic Content Section -->
+  <lazy-load>
        <section class="main-component overflow-hidden bg-[#F6F8F6]" aria-label="Desti Durable Tourism Section" >
           <div class="max-md:max-w-full px-2 py-16">
             <div class="mx-auto container 2xl:max-w-[1440px] relative p-4">
@@ -913,10 +1015,12 @@ import '../styles/global.css';
             </section>
           </section>
         </section>
+      </lazy-load>
  <!-- End Dynamic Content Section -->
         
       </section>
     </main>
+    <lazy-load>
     <footer class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Footer&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] footer-section">
       <section class="bg-white" aria-label="Footer Desti Durable Section">
         <div aria-label="Footer Wrapper">
@@ -947,5 +1051,6 @@ import '../styles/global.css';
         </div>
       </section>
     </footer>
+  </lazy-load>
   </body>
 </html>
