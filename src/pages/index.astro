@@ -24,6 +24,8 @@ import imgimages_dd_partner_logo_1_webp from "../../public/images/dd_partner_log
 import imgimages_dd_partner_logo_2_webp from "../../public/images/dd_partner_logo_2.webp";
 import imgimages_dd_partner_logo_3_webp from "../../public/images/dd_partner_logo_3.webp";
 import imgimages_dd_partner_logo_4_webp from "../../public/images/dd_partner_logo_4.webp";
+import imgimages_dd_partner_logo_5_webp from "../../public/images/dd_partner_logo_5.webp";
+import imgimages_dd_support_logo_1_webp from "../../public/images/dd_support_logo_1.webp";
 import imgimages_dd_who_we_are_img_webp from "../../public/images/dd_who_we_are_img.webp";
 import "../styles/global.css";
 ---
@@ -180,7 +182,7 @@ import "../styles/global.css";
         let isUserScrolling = false;
         let contentLoaded = false;
         let skipScrollToTop = false;
-        const scrollToTopLinks = document.querySelectorAll(".test-abc");
+        const scrollToTopLinks = document.querySelectorAll(".link-el");
         const dynamicContent = document.getElementById("dynamic-content");
         const faqContent = document.getElementById("faq-content");
         const loadContent = () => {
@@ -685,7 +687,7 @@ import "../styles/global.css";
             id="dynamic-content"
           >
             <lazy-load>
-              <div class="max-md:max-w-full px-2 py-16">
+              <div class="max-md:max-w-full px-2 pb-16">
                 <div
                   class="flex items-center justify-center flex-wrap lg:flex-nowrap w-full p-4 mx-auto container 2xl:max-w-[1440px] relative"
                   aria-label="Wrapper for Mission Section"
@@ -979,10 +981,8 @@ import "../styles/global.css";
                             class="mr-2 h-2 w-2 rounded-full bg-[#FAB549] flex-shrink-0"
                           ></span>
                           <div class="text-base">
-                            <span class="font-semibold mr-1">Départ:</span>
                             <span
-                              >En train depuis Lyon (pré- et post-acheminements
-                              possibles).</span
+                              >Extension possible pour découvrir la Costa brava éco-responsable : du 12 au 15 mars</span
                             >
                           </div>
                         </li>
@@ -991,8 +991,8 @@ import "../styles/global.css";
                             class="mr-2 h-2 w-2 rounded-full bg-[#FAB549] flex-shrink-0"
                           ></span>
                           <div class="text-base">
-                            <span class="font-semibold mr-1">Durée:</span>
-                            <span>4 jours, 3 nuits sur place.</span>
+                            <span class="font-semibold mr-1">Départ:</span>
+                            <span>En train depuis Lyon (pré- et post-acheminements de Paris possibles).</span>
                           </div>
                         </li>
                         <li class="flex items-center">
@@ -1002,8 +1002,7 @@ import "../styles/global.css";
                           <div class="text-base">
                             <span class="font-semibold mr-1">Hébergement:</span>
                             <span
-                              >Établissements éco-responsables certifiés pour
-                              leur engagement durable.</span
+                              >Le Mas Salagros 1er écoresort 100 % écologique</span
                             >
                           </div>
                         </li>
@@ -1014,7 +1013,7 @@ import "../styles/global.css";
                           <div class="text-base">
                             <span class="font-semibold mr-1">Participants:</span
                             >
-                            <span>Groupe limité à 28 personnes.</span>
+                            <span>Groupe limité à 25 personnes.</span>
                           </div>
                         </li>
                       </ul>
@@ -1120,19 +1119,11 @@ import "../styles/global.css";
                                         class="flex-shrink-0 w-10 h-10"
                                       />
                                       <h3>
-                                        Formation immersive pour créer et
-                                        communiquer des offres touristiques
-                                        durables
+                                        Formation immersive pour créer et communiquer des offres touristiques durables
                                       </h3>
                                     </div>
                                     <p class="text-gray-600">
-                                      Cette formation de 12 heures, avec 6
-                                      heures sur place et 6 heures
-                                      post-Desti&#x27;Durable en distanciel,
-                                      permet d&#x27;avancer sur la création
-                                      d&#x27;un produit touristique durable et
-                                      sa communication, tout en assurant un
-                                      suivi basé sur les retours d&#x27;agence
+                                      Cette formation de 9h heures 30, avec 6 heures sur place et 3 heures 30 post-Desti'Durable en distanciel, permet d'avancer sur la création d'un produit touristique durable et sa communication, tout en assurant un suivi basé sur les retours d'agence.
                                     </p>
                                   </div>
                                 </div>
@@ -1185,8 +1176,8 @@ import "../styles/global.css";
                           </div>
                           <div class="mb-8 flex justify-center">
                             <a
-                              class="flex font-medium items-center gap-2 rounded-full border-2 px-6 py-2 text-lg bg-white border-[#FAB549] test-abc"
-                              href="https://drive.google.com/file/d/1GfHR4lx3MebIRHInJ32VXNziDuF8Sfxk/view"
+                              class="flex font-medium items-center gap-2 rounded-full border-2 px-6 py-2 text-lg bg-white border-[#FAB549] link-el"
+                              href="https://www.canva.com/design/DAGb5_i7wLk/R4KX3iACs019HkT7T_-jzQ/view?utm_content=DAGb5_i7wLk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc7999778b1"
                             >
                               <Image
                                 alt="Desti'Durable"
@@ -1268,7 +1259,7 @@ import "../styles/global.css";
                               class="mb-8 text-[#252525] text-center font-semibold text-2xl md:text-3xl"
                               aria-label="Training Course Header"
                             >
-                              <span class="mr-1">Les modules</span>
+                              <span class="mr-1">Les formations</span>
                               <span class="text-[#FAB549]"
                                 >Desti&#x27;Durable</span
                               >
@@ -1401,10 +1392,7 @@ import "../styles/global.css";
                                         class="bg-[#FAB549] w-2 h-2 rounded-full flex-shrink-0"
                                       ></span>
                                       <p>
-                                        Module 1 : 2 heures par jour, pour un
-                                        total de 6 heures, la formation commence
-                                        dans le train ! puis sur 2 matinées à
-                                        l&#x27;hôtel.
+                                        Module 1 : 2 heures par jour, pour un total de 6 heures, la formation commence dans le train ! puis sur 2 matinées à l'hôtel.
                                       </p>
                                     </div>
                                     <div
@@ -1415,10 +1403,7 @@ import "../styles/global.css";
                                         class="bg-[#FAB549] w-2 h-2 rounded-full flex-shrink-0"
                                       ></span>
                                       <p>
-                                        Module 2 : Un mois après votre retour
-                                        Deux demi-journées (2 x 3h) dédiées au
-                                        suivi,avec un maximum de 14 personnes
-                                        par demi-journée
+                                        Module 2 : Un mois après votre retour 1 demi journée (3h30) dédiées au suivi,avec un maximum de 14 personnes par groupe soit de 9h à 12H30 ou de 13h30 17h
                                       </p>
                                     </div>
                                     <div
@@ -1428,7 +1413,7 @@ import "../styles/global.css";
                                       <span
                                         class="bg-[#FAB549] w-2 h-2 rounded-full flex-shrink-0"
                                       ></span>
-                                      <p>Un total de 12 heures de formation</p>
+                                      <p>Un total de 9h30 heures de formation</p>
                                     </div>
                                   </div>
                                 </div>
@@ -1525,10 +1510,10 @@ import "../styles/global.css";
                               aria-label="Footer Button"
                             >
                               <a
-                                class="rounded-full inline-flex items-center justify-center bg-[#FFB84C] px-8 min-h-[44px] mx-auto text-[#252525] hover:bg-[#ffa01c] text-center test-abc"
+                                class="rounded-full inline-flex items-center justify-center bg-[#FFB84C] px-8 min-h-[44px] mx-auto text-[#252525] hover:bg-[#ffa01c] text-center link-el"
                                 aria-label="Footer Button"
-                                href="https://drive.google.com/file/d/1kYqq2z1fltNxE3zioVEjzu4picvXxGnk/view"
-                                >Pré-inscription Desti'Durable Catalogne</a
+                                href="https://www.canva.com/design/DAGb5_i7wLk/R4KX3iACs019HkT7T_-jzQ/view?utm_content=DAGb5_i7wLk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc7999778b1"
+                                >Télécharger le programme complet</a
                               >
                             </div>
                           </div>
@@ -1664,6 +1649,48 @@ import "../styles/global.css";
                                           src={imgimages_dd_partner_logo_4_webp}
                                           width="254"
                                           height="65"
+                                          class="w-auto h-auto"
+                                        />
+                                      </div>
+                                      <div
+                                        class="flex w-full justify-center md:w-1/3"
+                                      >
+                                        <Image
+                                          alt="Tourismes TV"
+                                          src={imgimages_dd_partner_logo_5_webp}
+                                          width="254"
+                                          height="73"
+                                          class="w-auto h-auto"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="max-md:max-w-full px-2 py-16">
+                              <div
+                                class="px-4 mx-auto container 2xl:max-w-[1440px] relative"
+                                aria-label="Wrapper for Partner Section"
+                              >
+                                <div class="mx-auto lg:max-w-[1208px]">
+                                  <h2
+                                    class="mb-12 text-center font-semibold text-2xl md:text-3xl text-[#252525]"
+                                  >
+                                  Soutenu par le
+                                  </h2>
+                                  <div class="rounded-3xl bg-white p-8 md:p-12">
+                                    <div
+                                      class="flex flex-col items-center justify-center gap-12 md:flex-row md:gap-8"
+                                    >
+                                      <div
+                                        class="flex w-full justify-center md:w-1/3"
+                                      >
+                                        <Image
+                                          alt="Resaneo"
+                                          src={imgimages_dd_support_logo_1_webp}
+                                          width="254"
+                                          height="87.66"
                                           class="w-auto h-auto"
                                         />
                                       </div>
