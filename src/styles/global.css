@@ -1,6 +1,6 @@
 body > header:before,
 body > main:before,
-body > footer:before {
+body footer:before {
   content: none !important;
 }
 
